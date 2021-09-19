@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tally Counter ~Sohail-313 </title>
+    <style>
+        body {
+            overflow: hidden;
+            background: #009688;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            width: 100vw;
+            /* text-align: center;
+            font-size: 2rem; */
+        }
+
+        .shape {
+            position: relative;
+            width: 20rem;
+            height: 20rem;
+            background: #263238;
+            border-radius: 26% 26% 50% 50% / 26% 26% 74% 73%;
+            border: 2px solid gray;
+            color: #009688;
+        }
+
+        #display {
+            width: 15em;
+            background: rgba(255, 255, 255, 0.5);
+            height: 5em;
+            position: relative;
+            top: 10%;
+            left: 13%;
+            border-radius: 10px;
+            box-sizing: border-box
+        }
+
+        #number {
+            padding: 1rem;
+            text-align: right;
+            color: black;
+            font-size: 2rem;
+        }
+        .buttons{
+            position: relative;
+        }
+        .push_btn {
+            width: 6rem;
+            height: 6rem;
+            border: 2px solid black;
+            border-radius: 50%;
+            position: relative;
+            top: -130%;
+            left: 10%;
+        }
+        .reset_btn {
+            width: 2rem;
+            height: 2rem;
+            border: 2px solid black;
+            border-radius: 50%;
+            position: relative;
+            top: -230%;
+            left: 30%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="shape">
+            <!-- Tally counter -->
+            <div id="display">
+                <div id="number">
+                    0
+                </div>
+            </div>
+        </div>
+        <div class="buttons" >
+            <button class="push_btn" onclick="clicked()">
+            </button>
+            <button class="reset_btn" onclick="clickedReset()">
+
+            </button>
+        </div>
+    </div>
+
+
+    <script>
+        var x = 0;
+        function clicked() {
+            x++;
+            document.getElementById("number").innerHTML = x;
+        }
+        function clickedReset(){
+            x = 0;
+            document.getElementById("number").innerHTML = x;
+        }
+    </script>
+</body>
+
+</html>
